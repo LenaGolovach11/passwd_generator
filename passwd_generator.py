@@ -32,5 +32,15 @@ for j in range(random.randrange(0, len(chrs))):
 passwd += chrs
 random.shuffle(passwd)
 
+passwd_str = "".join(passwd)
+
+with open("passwd.txt", "a", encoding="utf-8") as file:
+    file.write(f"""Слово: {word}
+Пароль: {passwd_str}
+
+""")
+
+print()
 print("Ваш пароль:")
-print(*passwd, sep="")
+print(passwd_str)
+print("Пароль сохранен в файл passwd.txt")
